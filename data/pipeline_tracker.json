@@ -1,0 +1,254 @@
+{
+  "converted_files": {
+    "ddd5111e288d99ab51793dc836398a25e9911772ea8734842fdfb41ac347d507": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/UniBo/Matematica Applicata/Lezioni/(NEW) 03 - LezioneMA20260925.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Matematica Applicata/Lezioni/03 - Probabilità Condizionata e Indipendenza di Eventi.md",
+      "semantic_title": "03 - Probabilità Condizionata e Indipendenza di Eventi",
+      "converted_at": "2026-10-02 20:51:42"
+    },
+    "929ad96bb2d2931915230bc36e31a1b1c0103b4fc17a104029b817d80af40004": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/UniBo/Matematica Applicata/Lezioni/(NEW) 02 - LezioneMA20260922.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Matematica Applicata/Lezioni/02 - Fondamenti di Probabilità e Spazi Campionari.md",
+      "semantic_title": "02 - Fondamenti di Probabilità e Spazi Campionari",
+      "converted_at": "2026-10-02 20:51:42"
+    },
+    "0f55f6d3cccbec46a954262c94b3dd88598563c0ad0a7f223d03bf3b45aa2fac": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/UniBo/Matematica Applicata/Lezioni/(NEW) 04 - LezioneMA20260929.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Matematica Applicata/Lezioni/E04 - Probabilità condizionata e Indipendenza di Eventi.md",
+      "semantic_title": "E04 - Probabilità condizionata e Indipendenza di Eventi",
+      "converted_at": "2026-10-02 20:51:42"
+    },
+    "4016e6bd7318d33298104c10df350b0b4f0091550d0920a43dba04f0954d04f6": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/UniBo/Matematica Applicata/Lezioni/(NEW) 01 - LezioneMA20260918.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Matematica Applicata/Lezioni/E01 - Eserciziario 1 di Calcolo Combinatorio e Probabilità.md",
+      "semantic_title": "E01 - Eserciziario 1 di Calcolo Combinatorio e Probabilità",
+      "converted_at": "2026-10-02 20:51:42"
+    },
+    "43df2706953d0043244407a57461b0ac9d329dd2fdcde5d31ab9c2dcad4ccd9c": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/(NEW) 05 - Lezione 5 24-09-26.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/05 - Lezione 5 24-09-26.md",
+      "semantic_title": "05 - Lezione 5 24-09-26",
+      "converted_at": "2026-10-02 20:51:42"
+    },
+    "868fd15f8640303b432b2231d8b7007fe0bd8e86723d19fa316951400e7304b0": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/(NEW) 04 - Lezione 4 (23-09-26).pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/04 - Cinematica nel Riferimento Intrinseco e Moti nel Piano.md",
+      "semantic_title": "04 - Cinematica nel Riferimento Intrinseco e Moti nel Piano",
+      "converted_at": "2026-10-02 20:51:42"
+    },
+    "46186891ad77da390cc93c28a6fe5e90eee09e44291793a250ac589f3ce417ad": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/(NEW) 02 - Lezione 2 -10-2026.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/02 - Componenti Cartesiane e Prodotto Vettoriale.md",
+      "semantic_title": "02 - Componenti Cartesiane e Prodotto Vettoriale",
+      "converted_at": "2026-10-02 20:51:42"
+    },
+    "738c5b0ea03d5d7553787124a41889fd3e041a36dd8197f2e3411b78b9b6cae8": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/(NEW) 01 - Lezione 1 -10-26.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/01 - Calcolo Vettoriale e Operazioni sui Vettori.md",
+      "semantic_title": "01 - Calcolo Vettoriale e Operazioni sui Vettori",
+      "converted_at": "2026-10-02 20:51:42"
+    },
+    "46d7c010093076605e9aa44c921033a7f6df76815fa7c1c6ddcf87d876b3a321": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/(NEW) 16 - Lezione 16 -09-26.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/16 - Vettori Concetti Base e Rappresentazione.md",
+      "semantic_title": "16 - Vettori Concetti Base e Rappresentazione",
+      "converted_at": "2026-10-02 20:54:26"
+    },
+    "499cc7a52fe59c0014a600e2e4958c51856ea28e593db49ecb5beb4f0133fc34": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/(NEW) 17 - Lezione 17 - 09-26.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/17 - Lezione 17 - 09-26.md",
+      "semantic_title": "17 - Lezione 17 - 09-26",
+      "converted_at": "2026-10-02 20:58:19"
+    },
+    "a75f51c11e0fb3f1302e66125f3a0b141f7909b55f6b205fe82fc22904a5c0b7": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/Materiale/Fisica Generale T/Lezioni modulo 1/Lezione 18-09-26.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/08 - Cinematica del punto materiale e traiettoria.md",
+      "semantic_title": "08 - Cinematica del punto materiale e traiettoria",
+      "converted_at": "2026-10-03 11:40:41"
+    },
+    "9cc2c2074bbb055adf0739d1784535f40f2b34122ac19b0283df8668354e224b": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/Materiale/Fisica Generale T/Lezioni modulo 1/Lezione 25-09-26.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/09 - Cinematica del moto circolare uniforme.md",
+      "semantic_title": "09 - Cinematica del moto circolare uniforme",
+      "converted_at": "2026-10-03 11:52:39"
+    }
+  },
+  "notebooklm_uploads": {
+    "Basi di Dati": {
+      "35008c61b4c8e62cbf3b8c0b1195f1095c9912e7dfc543018b32ed273eae9eec": {
+        "filename": "00-Introduzione.Ti-fone.pdf",
+        "uploaded_at": "2026-10-02 21:19:47"
+      },
+      "6cc4d8029dd70d2488d23edf11a98ed27e4451e81f49458e2314707b7dd7f152": {
+        "filename": "00-Introduzione.pdf",
+        "uploaded_at": "2026-10-02 21:19:52"
+      },
+      "78426e71b801bc3e96e3cf80c56f1d4149bfd2cf6d04b67db2fb8dfafa4b23bd": {
+        "filename": "(NEW) 02 - Relazionale.pdf",
+        "uploaded_at": "2026-10-02 21:19:57"
+      },
+      "62e8db7d497f03d07a45048cca6fa086ec737583971e043de6545a035e4a770e": {
+        "filename": "(NEW) 03 - Algebra.pdf",
+        "uploaded_at": "2026-10-02 21:20:03"
+      },
+      "e733fba3436fe5e04ddc9be859c7e1f1ab3eae16d2185c0922066b8e42853fd7": {
+        "filename": "(NEW) 04.1 - SQL.DDL DMLbase.pdf",
+        "uploaded_at": "2026-10-02 21:20:08"
+      },
+      "770fe2b4e9dc00934ce2a4f9375615a5312b6da325a1c78a6bf6571806c52902": {
+        "filename": "(NEW) 01 - DBMS.pdf",
+        "uploaded_at": "2026-10-02 21:22:22"
+      },
+      "4b1d09148d0a63ccc375947d84ae9f4d2108a086efd9981012604dc8ebc58896": {
+        "filename": "(NEW) 04.2 - SQL Algebra.ValoriNulli.pdf",
+        "uploaded_at": "2026-10-02 21:22:27"
+      }
+    },
+    "Architetture dei Calcolatori": {
+      "b87686a2a548fe7308ab8873c10be0252eeadd7ae789671a2b413a03cb1d9144": {
+        "filename": "00_Complementi_Esercizi_Reti_Logiche.pdf",
+        "uploaded_at": "2026-10-02 21:19:25"
+      },
+      "5f2723a8b195d424937e81aecd138d669b7504a7eabaedc1a76c5c7bdfe89818": {
+        "filename": "01_Introduzione.pdf",
+        "uploaded_at": "2026-10-02 21:19:30"
+      },
+      "95364c73c33f3a6f0565fd8642ae45c3d411b8414927d5c01a9c1d597c6b9b67": {
+        "filename": "Prove d'esame.pdf",
+        "uploaded_at": "2026-10-02 21:19:36"
+      },
+      "5651ea4525f9cfa05ea382548f07ca6e2adfbe3cc8ff550e9b64623600c8eeeb": {
+        "filename": "(NEW) 02 - Mapping e decodifica.pdf",
+        "uploaded_at": "2026-10-02 21:19:43"
+      },
+      "db9f367a3a114c246b0bf6a4496ac4ac3a4e10a511350f4d9f8913633a572730": {
+        "filename": "Prove d'esame.pdf",
+        "uploaded_at": "2026-10-03 11:56:39"
+      }
+    },
+    "Fisica Generale": {
+      "5bad07574c2596388d8f1a97b8f836943b7cb6572a52f58a98789f97dfb17cc4": {
+        "filename": "00-PresentazioneCorso.pdf",
+        "uploaded_at": "2026-10-02 21:20:34"
+      },
+      "c53fe3968a5e7f03bd6703a29ee9550a2723e2cae3bc75905132d1fb2a359231": {
+        "filename": "Tracce_Esercizi.pdf",
+        "uploaded_at": "2026-10-02 21:20:41"
+      },
+      "e8ebe26925afde19c5fed5e12081af0f2458a1974b78a4f6aeef3c2e6b512adf": {
+        "filename": "01-introduzione.pdf",
+        "uploaded_at": "2026-10-02 21:20:47"
+      },
+      "3f78e8bc3784b323bda93c2f4cbd4984d9841939ed9eae2e3729a402b4aeddd9": {
+        "filename": "02-vettori.pdf",
+        "uploaded_at": "2026-10-02 21:20:54"
+      },
+      "f0f9fe6340bc3d90016df411f6d74ac37f668d8d0e2dae64723e2f64392594dd": {
+        "filename": "03-cinematica.pdf",
+        "uploaded_at": "2026-10-02 21:20:59"
+      },
+      "7da29f77cfaacef765a41850f64ea747ecf65ad7b00afb7821e92b6909641e3c": {
+        "filename": "04-statica.pdf",
+        "uploaded_at": "2026-10-02 21:21:05"
+      },
+      "8fd7a291dccf4c3ea1e63e33c6fa76d2a8cca775ce8f50d950750e6124602d52": {
+        "filename": "05-dinamica.pdf",
+        "uploaded_at": "2026-10-02 21:21:11"
+      },
+      "2dfccde39d52505b13bd5c9430f3af4dae63ecec607cc3d154f7c5853c080f8f": {
+        "filename": "Prove d'esame.pdf",
+        "uploaded_at": "2026-10-02 21:21:19"
+      },
+      "bd0cae5dd02255d0000d77a291deb0d5056959cb35b760f6856040e4036fe2a4": {
+        "filename": "01 - Calcolo Vettoriale e Operazioni sui Vettori.md",
+        "uploaded_at": "2026-10-02 21:23:17"
+      },
+      "5997d1ed06a96fb40041f60e6a2087b93191d7e34727007b26b1f00f8edfb9e1": {
+        "filename": "02 - Componenti Cartesiane e Prodotto Vettoriale.md",
+        "uploaded_at": "2026-10-02 21:23:24"
+      },
+      "ba28083bb2ed0786322faa55baae722041198bf6a8a359a79c1db4a34d49724e": {
+        "filename": "03 - Cinematica del Punto Materiale.md",
+        "uploaded_at": "2026-10-02 21:23:31"
+      },
+      "2765f7794f72551002b70cdd8c10c653e397520788238578c1f3ed550bf12df8": {
+        "filename": "04 - Cinematica nel Riferimento Intrinseco e Moti nel Piano.md",
+        "uploaded_at": "2026-10-02 21:23:37"
+      },
+      "880a02518dd1c10c7692868366fd8fb440cca19c112f5058db645b9667cfe143": {
+        "filename": "05 - Lezione 5 24-09-26.md",
+        "uploaded_at": "2026-10-02 21:23:44"
+      },
+      "df2f20a1111f2579b78134705f579fee12b5d28c76511093027e6b240256c6ce": {
+        "filename": "06 - Lezione 25-09-26.md",
+        "uploaded_at": "2026-10-02 21:23:50"
+      },
+      "2751285f8ccab615830d7aea42c14e5edee648c6e77d88f6386a4c2ae0c9a7e6": {
+        "filename": "07 - Lezione 30-09-26.md",
+        "uploaded_at": "2026-10-02 21:23:56"
+      },
+      "2b7a4f3351991bda3aff43f59fab97be9ca6e9f07b985a193226d6fb64153e10": {
+        "filename": "Prove d'esame.pdf",
+        "uploaded_at": "2026-10-03 11:56:44"
+      },
+      "46f1ce8b82e1cc83d94e1627c66f20cac8665f13bd8d90bcfb32a26448983e07": {
+        "filename": "08 - Cinematica del punto materiale e traiettoria.md",
+        "uploaded_at": "2026-10-03 11:56:49"
+      },
+      "a45c2a82286910efd0c5aed0011cdbde5e146b7394787775e1854867494685a5": {
+        "filename": "09 - Cinematica del moto circolare uniforme.md",
+        "uploaded_at": "2026-10-03 11:56:54"
+      }
+    },
+    "Matematica Applicata": {
+      "ba291d152a19447f1efb0d9bc64d7c34f64553e2522369006ebaac9e1558c8fe": {
+        "filename": "IIfoglioesercizima26.pdf",
+        "uploaded_at": "2026-10-02 21:20:13"
+      },
+      "d4ee7477c20a849436a845276ebe86e2ad67cbe0a1d8c1100259b15f5820d9a4": {
+        "filename": "Ifoglioesercizima26.pdf",
+        "uploaded_at": "2026-10-02 21:20:18"
+      },
+      "7e28046a45a0531160cbcf3e5944deee84feea3bdb6bd6dacc9fdaf31f1b2d8d": {
+        "filename": "RichiamiCalcoloCombinatorio2026.pdf",
+        "uploaded_at": "2026-10-02 21:20:24"
+      },
+      "0ffc659e959697ce7c79b77ce29caa637f09b992f867da1014e50e43578648f9": {
+        "filename": "RovinaGiocatore2026.pdf",
+        "uploaded_at": "2026-10-02 21:20:29"
+      },
+      "87641800d1970753e4aaf6ede43a5b07a931f33188278aa734b4b69dc57e6200": {
+        "filename": "01 - Eserciziario 1 di Calcolo Combinatorio e Probabilità.md",
+        "uploaded_at": "2026-10-02 21:22:32"
+      },
+      "a0c8c80901028b273fc15f580aa53405ac34931e703e7940d1e24eb6f07e0872": {
+        "filename": "02 - Probabilità condizionata e Indipendenza di Eventi.md",
+        "uploaded_at": "2026-10-02 21:22:37"
+      },
+      "0662185fd0175662c63d628ce21f0f88a28bb759efdb1fbbcc1816208cd5e4bd": {
+        "filename": "01 - Fondamenti di Probabilità e Spazi Campionari.md",
+        "uploaded_at": "2026-10-02 21:22:43"
+      },
+      "ca2ceab55a0f59e2dea7f1afcb605c819c91f2ee30e9bf8bbf977e0d2c39cb5b": {
+        "filename": "02 - Probabilità Condizionata e Indipendenza di Eventi.md",
+        "uploaded_at": "2026-10-02 21:22:49"
+      },
+      "6f4828434a3155b98ea637f7fb9df4345047bded26cfd4b4f5743ca032449e16": {
+        "filename": "03 - Casi Probabilità e Statistica.md",
+        "uploaded_at": "2026-10-02 21:22:56"
+      },
+      "5e7b185bba1651acf8f12740ba72f77e2a83be277e3749c2d66171acd9162c17": {
+        "filename": "04 - Probabilità e Variabili Casuali.md",
+        "uploaded_at": "2026-10-02 21:23:01"
+      },
+      "d9c55831e0088b1456971d8c9a747ab96cf74c2af72d0e03e864b3d8e09470c7": {
+        "filename": "01 - Richiami di Calcolo Combinatorio.md",
+        "uploaded_at": "2026-10-02 21:23:06"
+      },
+      "206fb4a8a9dae198f4dadb2535285477301e0c1b92043208c463d6668d0d147f": {
+        "filename": "02 - RovinaGiocatore2026.md",
+        "uploaded_at": "2026-10-02 21:23:11"
+      }
+    }
+  }
+}
