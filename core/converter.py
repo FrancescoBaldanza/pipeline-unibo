@@ -38,7 +38,7 @@ def convert_handwritten_page(
     embed_images: bool = False
 ) -> str:
     if model_candidates is None:
-        model_candidates = ["gemini-flash-latest", "gemini-3.7-flash", "gemini-3.5-flash", "gemini-2.5-pro", "gemini-2.5-flash"]
+        model_candidates = ["gemini-3.5-flash-lite", "gemini-flash-lite-latest", "gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.5-flash", "gemini-2.5-flash"]
 
     img_syntax_example = f"![Didascalia](images/p{page_num}_nome.png)" if embed_images else f"[Didascalia](images/p{page_num}_nome.png)"
     PROMPT_FILE = Path(__file__).resolve().parent / "prompt.txt"
@@ -126,7 +126,7 @@ TESTO:
 
 Rispondi con SOLO il titolo conciso."""
 
-    for model_name in ["gemini-flash-latest", "gemini-3.7-flash", "gemini-3.5-flash", "gemini-2.5-pro", "gemini-2.5-flash"]:
+    for model_name in ["gemini-3.5-flash-lite", "gemini-flash-lite-latest", "gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.5-flash", "gemini-2.5-flash"]:
         try:
             resp = client.models.generate_content(
                 model=model_name,
