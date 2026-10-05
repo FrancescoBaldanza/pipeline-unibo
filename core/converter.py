@@ -40,9 +40,8 @@ def convert_handwritten_page(
     if model_candidates is None:
         model_candidates = ["gemini-flash-latest", "gemini-3.7-flash", "gemini-3.5-flash", "gemini-2.5-pro", "gemini-2.5-flash"]
 
-    img_syntax_example = f"![Didascalia](images/p{page_num}_nome.png)" if embed_images else f"[Didascalia](images/p{page_num}_nome.png)"
-
-    with open("prompt.txt", "r", encoding="utf-8") as file:
+    PROMPT_FILE = Path(__file__).resolve().parent / "prompt.txt"
+    with open(PROMPT_FILE, "r", encoding="utf-8") as file:
         prompt = file.read().format(page=page_num, img_syntax=img_syntax_example)
 
     last_error = None

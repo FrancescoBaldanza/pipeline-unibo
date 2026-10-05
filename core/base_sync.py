@@ -117,19 +117,32 @@ class BaseSyncManager:
                     exam_pdfs.append(Path(root) / f)
 
         if exam_pdfs:
-            print(f"   [UNIONE ESAMI] Unione di {len(exam_pdfs)} PDF da '{exam_src.name}' in '{merged_target.name}'...")
-            merged_doc = pymupdf.open()
-            for p in exam_pdfs:
-                try:
-                    doc = pymupdf.open(str(p))
-                    merged_doc.insert_pdf(doc)
-                    doc.close()
-                except Exception as e:
-                    print(f"      [ERRORE] Lettura {p.name}: {e}")
-            target_dir.mkdir(parents=True, exist_ok=True)
-            merged_doc.save(str(merged_target))
-            merged_doc.close()
-            print(f"   [OK] Creato: {target_dir.name}/Prove d'esame.pdf ({merged_target.stat().st_size / (1024*1024):.1f} MB)")
+            should_rebuild = True
+            if merged_target.exists():
+                newest_src = max((p.stat().st_mtime for p in exam_pdfs), default=0)
+                if merged_target.stat().st_mtime >= newest_src and merged_target.stat().st_size > 0:
+                    should_rebuild = False
+
+            if should_rebuild:
+                print(f"   [UNIONE ESAMI] Unione di {len(exam_pdfs)} PDF da '{exam_src.name}' in '{merged_target.name}'...")
+                merged_doc = pymupdf.open()
+                for p in exam_pdfs:
+                    try:
+                        doc = pymupdf.open(str(p))
+                        try:
+                            merged_doc.insert_pdf(doc)
+                        except Exception:
+                            pdf_bytes = doc.tobytes(garbage=4, deflate=True, clean=True)
+                            doc_clean = pymupdf.open(stream=pdf_bytes, filetype="pdf")
+                            merged_doc.insert_pdf(doc_clean)
+                            doc_clean.close()
+                        doc.close()
+                    except Exception as e:
+                        print(f"      [ERRORE] Lettura {p.name}: {e}")
+                target_dir.mkdir(parents=True, exist_ok=True)
+                merged_doc.save(str(merged_target))
+                merged_doc.close()
+                print(f"   [OK] Creato: {target_dir.name}/Prove d'esame.pdf ({merged_target.stat().st_size / (1024*1024):.1f} MB)")
 
         if has_sub_exam:
             for item in source_dir.iterdir():
