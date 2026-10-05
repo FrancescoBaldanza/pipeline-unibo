@@ -40,6 +40,7 @@ def convert_handwritten_page(
     if model_candidates is None:
         model_candidates = ["gemini-flash-latest", "gemini-3.7-flash", "gemini-3.5-flash", "gemini-2.5-pro", "gemini-2.5-flash"]
 
+    img_syntax_example = f"![Didascalia](images/p{page_num}_nome.png)" if embed_images else f"[Didascalia](images/p{page_num}_nome.png)"
     PROMPT_FILE = Path(__file__).resolve().parent / "prompt.txt"
     with open(PROMPT_FILE, "r", encoding="utf-8") as file:
         prompt = file.read().format(page=page_num, img_syntax=img_syntax_example)
@@ -232,15 +233,19 @@ class PDFToMarkdownConverter:
 
         for md in md_files:
             num_match = re.search(r"(\d{2})", md.name)
-            if not num_match:
-                continue
-            prefix = num_match.group(1)
+            prefix = num_match.group(1) if num_match else None
             for pdf in pdf_files:
                 pdf_sha = calculate_sha256(pdf)
                 if self.tracker.is_converted(pdf_sha):
                     continue
+                matched = False
                 pdf_num_match = re.search(r"(\d{1,2})", pdf.name)
-                if pdf_num_match and f"{int(pdf_num_match.group(1)):02d}" == prefix:
+                if prefix and pdf_num_match and f"{int(pdf_num_match.group(1)):02d}" == prefix:
+                    matched = True
+                elif pdf.stem.lower() in md.stem.lower() or md.stem.lower() in pdf.stem.lower():
+                    matched = True
+                
+                if matched:
                     self.tracker.record_conversion(
                         sha256_hash=pdf_sha,
                         source_pdf=str(pdf),
