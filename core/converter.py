@@ -18,7 +18,7 @@ def get_gemini_client() -> genai.Client:
     api_key = os.environ.get("GEMINI_API_KEY") or GEMINI_API_KEY
     if not api_key:
         raise ValueError("GEMINI_API_KEY non trovata nelle variabili d'ambiente o in settings.py.")
-    return genai.Client(api_key=api_key)
+    return genai.Client(api_key=api_key, http_options=types.HttpOptions(timeout=60000))
 
 
 def extract_page_image(pdf_path: Path, page_idx: int, scale: float = 2.0) -> Image.Image:
