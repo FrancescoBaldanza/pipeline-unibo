@@ -232,17 +232,19 @@ class PDFToMarkdownConverter:
             pdf_files.extend(list(s_dir.glob("*.pdf")))
 
         for md in md_files:
-            num_match = re.search(r"(\d{2})", md.name)
+            num_match = re.search(r"^(\d{2})", md.name)
             prefix = num_match.group(1) if num_match else None
             for pdf in pdf_files:
                 pdf_sha = calculate_sha256(pdf)
                 if self.tracker.is_converted(pdf_sha):
                     continue
                 matched = False
-                pdf_num_match = re.search(r"(\d{1,2})", pdf.name)
-                if prefix and pdf_num_match and f"{int(pdf_num_match.group(1)):02d}" == prefix:
-                    matched = True
-                elif pdf.stem.lower() in md.stem.lower() or md.stem.lower() in pdf.stem.lower():
+                has_date = bool(re.search(r"\d{1,2}\s*[-_/.]\s*\d{1,2}\s*[-_/.]\s*\d{2,4}", pdf.name))
+                if not has_date:
+                    pdf_num_match = re.search(r"^(\d{1,2})", pdf.name)
+                    if prefix and pdf_num_match and f"{int(pdf_num_match.group(1)):02d}" == prefix:
+                        matched = True
+                if not matched and (pdf.stem.lower() in md.stem.lower() or md.stem.lower() in pdf.stem.lower()):
                     matched = True
                 
                 if matched:
