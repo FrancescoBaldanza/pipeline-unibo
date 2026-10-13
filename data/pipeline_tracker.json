@@ -83,6 +83,18 @@
       "md_output": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/09 - Seconda e Terza Legge di Newton.md",
       "semantic_title": "09 - Seconda e Terza Legge di Newton",
       "converted_at": "2026-10-05 20:41:17"
+    },
+    "178d26a35a67dc54c2769670fa0c08e24ec9452ea830208e3bfab76e7922173a": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/Materiale/Matematica Applicata T/Schermate di lavagne/LezioneMA20261009.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Matematica Applicata/Lezioni/06 - Esercizi di calcolo delle probabilita.md",
+      "semantic_title": "06 - Esercizi di calcolo delle probabilita",
+      "converted_at": "2026-10-13 10:11:06"
+    },
+    "44f5844db253b1f5999f7aca8d3c426b984cf48e70eeb2f23348db573e99f654": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/Materiale/Fisica Generale T/Lezioni modulo 1/Lezione 9-10-2026.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/10 - Sistemi non inerziali e forze fittizie.md",
+      "semantic_title": "10 - Sistemi non inerziali e forze fittizie",
+      "converted_at": "2026-10-13 10:11:59"
     }
   },
   "notebooklm_uploads": {
@@ -114,6 +126,10 @@
       "4b1d09148d0a63ccc375947d84ae9f4d2108a086efd9981012604dc8ebc58896": {
         "filename": "(NEW) 04.2 - SQL Algebra.ValoriNulli.pdf",
         "uploaded_at": "2026-10-02 21:22:27"
+      },
+      "3c019f5451de66d66797fe48618b08e93c0c7de4faff770a24146d95c3b03333": {
+        "filename": "(NEW) 04.1 - SQL.DDL DMLbase.pdf",
+        "uploaded_at": "2026-10-13 10:12:13"
       }
     },
     "Architetture dei Calcolatori": {
@@ -140,6 +156,10 @@
       "4ec226fbcb943b60a0ac5efac11f1f2827ae0ec9244f8b7a28a997b02a17dd76": {
         "filename": "Prove d'esame.pdf",
         "uploaded_at": "2026-10-05 17:47:39"
+      },
+      "dd5fc6cedbe38c9ef931d50b1e991081831e59b11a76db640b4d52a0acf62e47": {
+        "filename": "03_Linguaggio_macchina.pdf",
+        "uploaded_at": "2026-10-13 10:12:07"
       }
     },
     "Fisica Generale": {
@@ -218,6 +238,10 @@
       "715d8977f1b1a1b87c04dbeef0f66f77c38fd262af95894dc945f42e36ad0010": {
         "filename": "09 - Seconda e Terza Legge di Newton.md",
         "uploaded_at": "2026-10-05 20:41:33"
+      },
+      "b800508f0d3180d4d58b58236f76d048d4ddf7b1815d7b419d3c37e5792d8f95": {
+        "filename": "10 - Sistemi non inerziali e forze fittizie.md",
+        "uploaded_at": "2026-10-13 10:12:33"
       }
     },
     "Matematica Applicata": {
@@ -276,6 +300,14 @@
       "aa59fa8600ac0da4db8a0f69409c4703a96acddd6e7633fd13e57517ea412969": {
         "filename": "05 - Densità e ripartizione congiunte e marginali.md",
         "uploaded_at": "2026-10-05 19:31:57"
+      },
+      "a6c1d6abf352c36182568e4df79a7fe65a1099caad14ea1a002085cb3e0aff93": {
+        "filename": "IVfoglioesercizima26.pdf",
+        "uploaded_at": "2026-10-13 10:12:21"
+      },
+      "17e94700ecf48dd9009b5aca860cc61bf2c630133afb604cfaf363bab299dfec": {
+        "filename": "06 - Esercizi di calcolo delle probabilita.md",
+        "uploaded_at": "2026-10-13 10:12:27"
       }
     }
   }

@@ -12,3 +12,5 @@ ENV/
 .vscode/
 .DS_Store
 Thumbs.db
+specs/pagina-matematica-applicata_files
+specs/pagina-matematica-applicata.html
