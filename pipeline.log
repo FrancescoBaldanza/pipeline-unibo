@@ -1,0 +1,430 @@
+
+[PIPELINE] Esecuzione completa: Download -> Sync Obsidian -> Conversione OCR -> Push NotebookLM
+
+==================================================
+[FASE 1] Download materiali tramite dlub
+==================================================
+==================================================
+		Avvio Fase Download: dlub -get all
+==================================================
+Download dlub completato con successo.
+--- Output dlub ---
+[DOWNLOADER] Avvio sincronizzazione per 4 corsi...
+
+============================================================
+[DOWNLOADER] Scansione Corso ID 81475...
+URL: https://virtuale.unibo.it/course/view.php?id=81475
+Nome Corso: Architetture dei Calcolatori T
+Cartella File System: /Users/francescobaldanza/Desktop/Materiale/Architetture dei Calcolatori T
+============================================================
+
+[SEZIONE] Introduzione
+  [CARTELLA] Prove_esame
+
+[SEZIONE] Complementi ed esercizi di Reti Logiche
+
+[SEZIONE] Introduzione
+
+[SEZIONE] Mapping e decodifica
+
+[SEZIONE] Linguaggio macchina
+
+------------------------------------------------------------
+Riepilogo 'Architetture dei Calcolatori T':
+   - Risorse totali: 120
+   - Gia' archiviate: 120
+   - Nuovi download: 0
+------------------------------------------------------------
+
+============================================================
+[DOWNLOADER] Scansione Corso ID 80238...
+URL: https://virtuale.unibo.it/course/view.php?id=80238
+Nome Corso: Basi di Dati T
+Cartella File System: /Users/francescobaldanza/Desktop/Materiale/Basi di Dati T
+============================================================
+
+[SEZIONE] Introduzione al corso
+
+[SEZIONE] Materiale illustrativo (non è da studiare!)
+
+[SEZIONE] Esercizi
+  [CARTELLA] Esercizi SQL
+  [CARTELLA] Prove d'esame di Sistemi Informativi T
+
+[SEZIONE] Materiale utile per il Lab
+  [CARTELLA] Manuali
+  [CARTELLA] Software
+  [CARTELLA] Schemi E_R
+
+[SEZIONE] Modulo 1 (materiale in aggiornamento)
+
+[SEZIONE] Modulo 2_ LAB
+
+------------------------------------------------------------
+Riepilogo 'Basi di Dati T':
+   - Risorse totali: 244
+   - Gia' archiviate: 244
+   - Nuovi download: 0
+------------------------------------------------------------
+
+============================================================
+[DOWNLOADER] Scansione Corso ID 83152...
+URL: https://virtuale.unibo.it/course/view.php?id=83152
+Nome Corso: Fisica Generale T
+Cartella File System: /Users/francescobaldanza/Desktop/Materiale/Fisica Generale T
+============================================================
+
+[SEZIONE] Informazioni Generali sul Corso
+
+[SEZIONE] Lezioni modulo 1
+    [DOWNLOAD] 'Lezione 11 (14-10-2026)'
+       [SALVATO] 'Lezione 14-10-2026.pdf' (4.55 MB) -> Fisica Generale T / Lezioni modulo 1 / Lezione 14-10-2026.pdf
+
+[SEZIONE] Slides Lezioni
+
+[SEZIONE] Esercizi tutor
+
+[SEZIONE] Archivio prove d'esame
+  [CARTELLA] AA 2017_2018 (Fis Gen T2)
+  [CARTELLA] AA 2019_2020
+  [CARTELLA] Esami AA 2024-2025 con soluzioni
+
+------------------------------------------------------------
+Riepilogo 'Fisica Generale T':
+   - Risorse totali: 39
+   - Gia' archiviate: 38
+   - Nuovi download: 1
+------------------------------------------------------------
+
+============================================================
+[DOWNLOADER] Scansione Corso ID 80900...
+URL: https://virtuale.unibo.it/course/view.php?id=80900
+Nome Corso: Matematica Applicata T
+Cartella File System: /Users/francescobaldanza/Desktop/Materiale/Matematica Applicata T
+============================================================
+
+[SEZIONE] Schermate di lavagne
+    [DOWNLOAD] 'Lezione del 13_10_2026'
+       [SALVATO] 'LezioneMA20261013.pdf' (7.77 MB) -> Matematica Applicata T / Schermate di lavagne / LezioneMA20261013.pdf
+
+[SEZIONE] Fogli di esercizi per casa
+
+[SEZIONE] Appunti su alcuni argomenti del corso
+
+------------------------------------------------------------
+Riepilogo 'Matematica Applicata T':
+   - Risorse totali: 13
+   - Gia' archiviate: 12
+   - Nuovi download: 1
+------------------------------------------------------------
+
+Sincronizzazione completata per tutti i corsi.
+-------------------
+
+==================================================
+[FASE 2] Base Sync e Preparazione Obsidian Vault
+==================================================
+Verifica ed eventuale migrazione note legacy...
+
+[SYNC] Corso: Architetture dei Calcolatori T -> Architetture dei Calcolatori
+
+[SYNC] Corso: Basi di Dati T -> Basi di Dati
+   [IGNORATA] Cartella: Esercizi
+   [IGNORATA] Cartella: Materiale illustrativo (non è da studiare!)
+   [IGNORATA] Cartella: Materiale utile per il Lab
+   [IGNORATA] Cartella: Materiale utile per il Lab (in aggiornamento)
+   [COPIA] Lezioni/(NEW) 01 - DBMS.pdf
+   [COPIA] Lezioni/(NEW) 02 - Relazionale.pdf
+   [COPIA] Lezioni/(NEW) 03 - Algebra.pdf
+   [COPIA] Lezioni/(NEW) 04.1 - SQL.DDL DMLbase.pdf
+   [COPIA] Lezioni/(NEW) 04.2 - SQL Algebra.ValoriNulli.pdf
+   [IGNORATA] Cartella: Modulo 2_ LAB
+
+[SYNC] Corso: Matematica Applicata T -> Matematica Applicata
+
+[SYNC] Corso: Fisica Generale T -> Fisica Generale
+
+==================================================
+[FASE 3] Conversione OCR Gemini (LaTeX + Figure)
+==================================================
+
+[INFO] Analisi lezioni per: Matematica Applicata
+   [PROGRESSIVO] Assegnazione automatica indice: LezioneMA20261013.pdf -> [07 -]
+
+[OCR Gemini] Avvio conversione: LezioneMA20261013.pdf (11 pagine)
+   [INFO] Trascrizione pagina 1/11...
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+   [INFO] Trascrizione pagina 2/11...
+   [INFO] Trascrizione pagina 3/11...
+   [INFO] Trascrizione pagina 4/11...
+   [INFO] Trascrizione pagina 5/11...
+   [INFO] Trascrizione pagina 6/11...
+   [INFO] Trascrizione pagina 7/11...
+   [INFO] Trascrizione pagina 8/11...
+   [INFO] Trascrizione pagina 9/11...
+   [INFO] Trascrizione pagina 10/11...
+   [INFO] Trascrizione pagina 11/11...
+[OK] Completata conversione: 07 - Momenti e Varianza di una Variabile Casuale.md
+
+[INFO] Analisi lezioni per: Fisica Generale
+   [PROGRESSIVO] Assegnazione automatica indice: Lezione 14-10-2026.pdf -> [11 -]
+
+[OCR Gemini] Avvio conversione: Lezione 14-10-2026.pdf (16 pagine)
+   [INFO] Trascrizione pagina 1/16...
+   [INFO] Trascrizione pagina 2/16...
+   [INFO] Trascrizione pagina 3/16...
+   [INFO] Trascrizione pagina 4/16...
+   [INFO] Trascrizione pagina 5/16...
+   [INFO] Trascrizione pagina 6/16...
+   [INFO] Trascrizione pagina 7/16...
+   [INFO] Trascrizione pagina 8/16...
+   [INFO] Trascrizione pagina 9/16...
+   [INFO] Trascrizione pagina 10/16...
+   [INFO] Trascrizione pagina 11/16...
+   [INFO] Trascrizione pagina 12/16...
+   [INFO] Trascrizione pagina 13/16...
+   [INFO] Trascrizione pagina 14/16...
+   [INFO] Trascrizione pagina 15/16...
+   [INFO] Trascrizione pagina 16/16...
+[OK] Completata conversione: 11 - Studio del lavoro e della forza elastica.md
+
+==================================================
+[FASE 4] Push e Sincronizzazione Google NotebookLM
+==================================================
+
+[SYNC] NotebookLM -> Architetture dei Calcolatori
+
+[SYNC] NotebookLM -> Basi di Dati
+
+[SYNC] NotebookLM -> Matematica Applicata
+   Upload NotebookLM (Matematica Applicata): '07 - Momenti e Varianza di una Variabile Casuale.md'...
+	Caricato con successo in NotebookLM: '07 - Momenti e Varianza di una Variabile Casuale'
+
+[SYNC] NotebookLM -> Fisica Generale
+   Upload NotebookLM (Fisica Generale): '11 - Studio del lavoro e della forza elastica.md'...
+	Caricato con successo in NotebookLM: '11 - Studio del lavoro e della forza elastica'
+
+==================================================
+[OK] Pipeline completata con successo!
+==================================================
+
+[PIPELINE] Esecuzione completa: Download -> Sync Obsidian -> Conversione OCR -> Push NotebookLM
+
+==================================================
+[FASE 1] Download materiali tramite dlub
+==================================================
+==================================================
+		Avvio Fase Download: dlub -get all
+==================================================
+Download dlub completato con successo.
+--- Output dlub ---
+[AUTH] Sessione Moodle scaduta o non presente. Tentativo rinnovo automatico...
+[AUTH] Avvio browser (headless=True)...
+[AUTH] Apertura portale Virtuale UniBo...
+[AUTH] Selezione modalita' 'Entra con UNIBO'...
+[AUTH] Autenticazione credenziali d'Ateneo...
+[AUTH] Login verificato con successo. Cookie MoodleSession attivo.
+
+[DOWNLOADER] Avvio sincronizzazione per 4 corsi...
+
+============================================================
+[DOWNLOADER] Scansione Corso ID 81475...
+URL: https://virtuale.unibo.it/course/view.php?id=81475
+Nome Corso: Architetture dei Calcolatori T
+Cartella File System: /Users/francescobaldanza/Desktop/Materiale/Architetture dei Calcolatori T
+============================================================
+
+[SEZIONE] Introduzione
+  [CARTELLA] Prove_esame
+
+[SEZIONE] Complementi ed esercizi di Reti Logiche
+
+[SEZIONE] Introduzione
+
+[SEZIONE] Mapping e decodifica
+    [DOWNLOAD] 'Testo_Esercitazione_mapping_DLX'
+       [SALVATO] 'Testo_Esercitazione_mapping_DLX.pdf' (45.0 KB) -> Architetture dei Calcolatori T / Mapping e decodifica / Testo_Esercitazione_mapping_DLX.pdf
+
+[SEZIONE] Linguaggio macchina
+
+[SEZIONE] Interruzioni
+    [DOWNLOAD] '04 - Interruzioni'
+       [SALVATO] '04_Interruzioni.pdf' (778.2 KB) -> Architetture dei Calcolatori T / Interruzioni / 04_Interruzioni.pdf
+
+------------------------------------------------------------
+Riepilogo 'Architetture dei Calcolatori T':
+   - Risorse totali: 122
+   - Gia' archiviate: 120
+   - Nuovi download: 2
+------------------------------------------------------------
+
+============================================================
+[DOWNLOADER] Scansione Corso ID 80238...
+URL: https://virtuale.unibo.it/course/view.php?id=80238
+Nome Corso: Basi di Dati T
+Cartella File System: /Users/francescobaldanza/Desktop/Materiale/Basi di Dati T
+============================================================
+
+[SEZIONE] Introduzione al corso
+
+[SEZIONE] Materiale illustrativo (non è da studiare!)
+
+[SEZIONE] Esercizi
+    [DOWNLOAD] 'Esercizi svolti (versione del 12_10)'
+       [SALVATO] '00-esercizi.pdf' (643.0 KB) -> Basi di Dati T / Esercizi / 00-esercizi.pdf
+  [CARTELLA] Esercizi SQL
+  [CARTELLA] Prove d'esame di Sistemi Informativi T
+
+[SEZIONE] Materiale utile per il Lab
+  [CARTELLA] Manuali
+  [CARTELLA] Software
+  [CARTELLA] Schemi E_R
+
+[SEZIONE] Modulo 1 (materiale in aggiornamento)
+
+[SEZIONE] Modulo 2_ LAB
+
+------------------------------------------------------------
+Riepilogo 'Basi di Dati T':
+   - Risorse totali: 244
+   - Gia' archiviate: 243
+   - Nuovi download: 1
+------------------------------------------------------------
+
+============================================================
+[DOWNLOADER] Scansione Corso ID 83152...
+URL: https://virtuale.unibo.it/course/view.php?id=83152
+Nome Corso: Fisica Generale T
+Cartella File System: /Users/francescobaldanza/Desktop/Materiale/Fisica Generale T
+============================================================
+
+[SEZIONE] Informazioni Generali sul Corso
+
+[SEZIONE] Lezioni modulo 1
+    [DOWNLOAD] 'Lezione 12 (15-10-2026)'
+       [SALVATO] 'Lezione 15-10-2026.pdf' (2.82 MB) -> Fisica Generale T / Lezioni modulo 1 / Lezione 15-10-2026.pdf
+
+[SEZIONE] Slides Lezioni
+    [DOWNLOAD] 'Lavoro e Energia'
+       [SALVATO] '06-lavoro-e-energia.pdf' (1.71 MB) -> Fisica Generale T / Slides Lezioni / 06-lavoro-e-energia.pdf
+    [DOWNLOAD] 'Terzo principio e urti'
+       [SALVATO] '07-terzo-principio.pdf' (2.48 MB) -> Fisica Generale T / Slides Lezioni / 07-terzo-principio.pdf
+    [DOWNLOAD] 'Dinamica dei sistemi'
+       [SALVATO] '08-dinamica-sistemi.pdf' (4.22 MB) -> Fisica Generale T / Slides Lezioni / 08-dinamica-sistemi.pdf
+    [DOWNLOAD] 'Gravitazione'
+       [SALVATO] '09-gravitazione.pdf' (2.36 MB) -> Fisica Generale T / Slides Lezioni / 09-gravitazione.pdf
+
+[SEZIONE] Esercizi tutor
+
+[SEZIONE] Archivio prove d'esame
+  [CARTELLA] AA 2017_2018 (Fis Gen T2)
+  [CARTELLA] AA 2019_2020
+  [CARTELLA] Esami AA 2024-2025 con soluzioni
+
+------------------------------------------------------------
+Riepilogo 'Fisica Generale T':
+   - Risorse totali: 44
+   - Gia' archiviate: 39
+   - Nuovi download: 5
+------------------------------------------------------------
+
+============================================================
+[DOWNLOADER] Scansione Corso ID 80900...
+URL: https://virtuale.unibo.it/course/view.php?id=80900
+Nome Corso: Matematica Applicata T
+Cartella File System: /Users/francescobaldanza/Desktop/Materiale/Matematica Applicata T
+============================================================
+
+[SEZIONE] Schermate di lavagne
+
+[SEZIONE] Fogli di esercizi per casa
+
+[SEZIONE] Appunti su alcuni argomenti del corso
+
+------------------------------------------------------------
+Riepilogo 'Matematica Applicata T':
+   - Risorse totali: 13
+   - Gia' archiviate: 13
+   - Nuovi download: 0
+------------------------------------------------------------
+
+Sincronizzazione completata per tutti i corsi.
+-------------------
+
+==================================================
+[FASE 2] Base Sync e Preparazione Obsidian Vault
+==================================================
+Verifica ed eventuale migrazione note legacy e appiattimento UniBo...
+
+[SYNC] Corso: Architetture dei Calcolatori T -> Architetture dei Calcolatori
+   [FONTE NOTEBOOKLM] 04 - Interruzioni.pdf
+   [NUOVO UNIBO] (NEW) 04 - Interruzioni.pdf
+   [FONTE NOTEBOOKLM] Testo_Esercitazione_mapping_DLX.pdf
+   [NUOVO UNIBO] (NEW) Testo_Esercitazione_mapping_DLX.pdf
+
+[SYNC] Corso: Basi di Dati T -> Basi di Dati
+
+[SYNC] Corso: Matematica Applicata T -> Matematica Applicata
+
+[SYNC] Corso: Fisica Generale T -> Fisica Generale
+   [FONTE NOTEBOOKLM] S06 - Lavoro-e-energia.pdf
+   [NUOVO UNIBO] (NEW) S06 - Lavoro-e-energia.pdf
+   [FONTE NOTEBOOKLM] S07 - Terzo-principio.pdf
+   [NUOVO UNIBO] (NEW) S07 - Terzo-principio.pdf
+   [FONTE NOTEBOOKLM] S08 - Dinamica-sistemi.pdf
+   [NUOVO UNIBO] (NEW) S08 - Dinamica-sistemi.pdf
+   [FONTE NOTEBOOKLM] S09 - Gravitazione.pdf
+   [NUOVO UNIBO] (NEW) S09 - Gravitazione.pdf
+
+==================================================
+[FASE 3] Conversione OCR Gemini (LaTeX + Figure)
+==================================================
+
+[INFO] Analisi lezioni per: Matematica Applicata
+
+[INFO] Analisi lezioni per: Fisica Generale
+   [PROGRESSIVO] Assegnazione automatica indice: Lezione 15-10-2026.pdf -> [12 -]
+
+[OCR Gemini] Avvio conversione: Lezione 15-10-2026.pdf (10 pagine)
+   [INFO] Trascrizione pagina 1/10...
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+   [INFO] Trascrizione pagina 2/10...
+   [INFO] Trascrizione pagina 3/10...
+   [INFO] Trascrizione pagina 4/10...
+   [INFO] Trascrizione pagina 5/10...
+   [INFO] Trascrizione pagina 6/10...
+   [INFO] Trascrizione pagina 7/10...
+   [INFO] Trascrizione pagina 8/10...
+   [INFO] Trascrizione pagina 9/10...
+   [INFO] Trascrizione pagina 10/10...
+[OK] Completata conversione: (NEW) 12 - Campi conservativi e operatore rotore.md
+
+==================================================
+[FASE 4] Push e Sincronizzazione Google NotebookLM
+==================================================
+
+[SYNC] NotebookLM -> Architetture dei Calcolatori
+   Upload NotebookLM (Architetture dei Calcolatori): '04 - Interruzioni.pdf'...
+	Caricato con successo in NotebookLM: '04 - Interruzioni'
+   Upload NotebookLM (Architetture dei Calcolatori): 'Testo_Esercitazione_mapping_DLX.pdf'...
+	Caricato con successo in NotebookLM: 'Testo_Esercitazione_mapping_DLX'
+
+[SYNC] NotebookLM -> Basi di Dati
+
+[SYNC] NotebookLM -> Matematica Applicata
+
+[SYNC] NotebookLM -> Fisica Generale
+   Upload NotebookLM (Fisica Generale): '12 - Campi conservativi e operatore rotore.md'...
+	Caricato con successo in NotebookLM: '12 - Campi conservativi e operatore rotore'
+   Upload NotebookLM (Fisica Generale): 'S06 - Lavoro-e-energia.pdf'...
+	Caricato con successo in NotebookLM: 'S06 - Lavoro-e-energia'
+   Upload NotebookLM (Fisica Generale): 'S07 - Terzo-principio.pdf'...
+	Caricato con successo in NotebookLM: 'S07 - Terzo-principio'
+   Upload NotebookLM (Fisica Generale): 'S08 - Dinamica-sistemi.pdf'...
+	Caricato con successo in NotebookLM: 'S08 - Dinamica-sistemi'
+   Upload NotebookLM (Fisica Generale): 'S09 - Gravitazione.pdf'...
+	Caricato con successo in NotebookLM: 'S09 - Gravitazione'
+
+==================================================
+[OK] Pipeline completata con successo!
+==================================================

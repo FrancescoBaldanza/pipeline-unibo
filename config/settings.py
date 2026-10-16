@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 SOURCE_ROOT = Path("~/Desktop/Materiale").expanduser().resolve()
 TARGET_ROOT = Path("~/Desktop/UniBo").expanduser().resolve()
+NOTEBOOKLM_SOURCES_ROOT = Path("~/Desktop/Fonti NotebookLM").expanduser().resolve()
 TRACKER_FILE = Path(__file__).resolve().parent.parent / "data" / "pipeline_tracker.json"
 TRACKER_FILE.parent.mkdir(parents=True, exist_ok=True)
 STAGING_DIR = Path("~/.unibo_pipeline_staging").expanduser().resolve()

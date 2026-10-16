@@ -8,7 +8,7 @@ from typing import Dict, List, Tuple, Optional
 import pymupdf
 
 from config.settings import (
-    TARGET_ROOT,
+    NOTEBOOKLM_SOURCES_ROOT,
     NOTEBOOKS,
     PYTHON_BIN,
     STAGING_DIR
@@ -182,7 +182,7 @@ class NotebookLMSyncManager:
 
         results = {}
         for course_name in NOTEBOOKS.keys():
-            course_dir = TARGET_ROOT / course_name
+            course_dir = NOTEBOOKLM_SOURCES_ROOT / course_name
             count = self.sync_course(course_name, course_dir)
             results[course_name] = count
 

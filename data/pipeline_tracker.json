@@ -95,41 +95,75 @@
       "md_output": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/10 - Sistemi non inerziali e forze fittizie.md",
       "semantic_title": "10 - Sistemi non inerziali e forze fittizie",
       "converted_at": "2026-10-13 10:11:59"
+    },
+    "861ad25745f0b647c0e538fd8b3890e4f12810e20a9feac9515fe3af69cea376": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/Materiale/Matematica Applicata T/Schermate di lavagne/LezioneMA20261013.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Matematica Applicata/Lezioni/07 - Momenti e Varianza di una Variabile Casuale.md",
+      "semantic_title": "07 - Momenti e Varianza di una Variabile Casuale",
+      "converted_at": "2026-10-15 11:11:30"
+    },
+    "245805e8f5b726a0e79069f684de1cd3d6e74257545fd4096b7a96a3e89d997a": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/Materiale/Fisica Generale T/Lezioni modulo 1/Lezione 14-10-2026.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/Lezioni/11 - Studio del lavoro e della forza elastica.md",
+      "semantic_title": "11 - Studio del lavoro e della forza elastica",
+      "converted_at": "2026-10-15 11:12:53"
+    },
+    "f1d57ddf589503d8f21298a3cf560cbe496508897bb7618ae309e234ba4fcf07": {
+      "source_pdf": "/Users/francescobaldanza/Desktop/Materiale/Fisica Generale T/Lezioni modulo 1/Lezione 15-10-2026.pdf",
+      "md_output": "/Users/francescobaldanza/Desktop/UniBo/Fisica Generale/(NEW) 12 - Campi conservativi e operatore rotore.md",
+      "semantic_title": "12 - Campi conservativi e operatore rotore",
+      "converted_at": "2026-10-16 11:02:58"
     }
   },
   "notebooklm_uploads": {
     "Basi di Dati": {
       "35008c61b4c8e62cbf3b8c0b1195f1095c9912e7dfc543018b32ed273eae9eec": {
         "filename": "00-Introduzione.Ti-fone.pdf",
-        "uploaded_at": "2026-10-02 21:19:47"
+        "uploaded_at": "2026-10-15 19:58:15"
       },
       "6cc4d8029dd70d2488d23edf11a98ed27e4451e81f49458e2314707b7dd7f152": {
         "filename": "00-Introduzione.pdf",
-        "uploaded_at": "2026-10-02 21:19:52"
-      },
-      "78426e71b801bc3e96e3cf80c56f1d4149bfd2cf6d04b67db2fb8dfafa4b23bd": {
-        "filename": "(NEW) 02 - Relazionale.pdf",
-        "uploaded_at": "2026-10-02 21:19:57"
-      },
-      "62e8db7d497f03d07a45048cca6fa086ec737583971e043de6545a035e4a770e": {
-        "filename": "(NEW) 03 - Algebra.pdf",
-        "uploaded_at": "2026-10-02 21:20:03"
-      },
-      "e733fba3436fe5e04ddc9be859c7e1f1ab3eae16d2185c0922066b8e42853fd7": {
-        "filename": "(NEW) 04.1 - SQL.DDL DMLbase.pdf",
-        "uploaded_at": "2026-10-02 21:20:08"
+        "uploaded_at": "2026-10-15 19:58:20"
       },
       "770fe2b4e9dc00934ce2a4f9375615a5312b6da325a1c78a6bf6571806c52902": {
-        "filename": "(NEW) 01 - DBMS.pdf",
-        "uploaded_at": "2026-10-02 21:22:22"
+        "filename": "01 - DBMS.pdf",
+        "uploaded_at": "2026-10-15 19:58:25"
       },
-      "4b1d09148d0a63ccc375947d84ae9f4d2108a086efd9981012604dc8ebc58896": {
-        "filename": "(NEW) 04.2 - SQL Algebra.ValoriNulli.pdf",
-        "uploaded_at": "2026-10-02 21:22:27"
+      "78426e71b801bc3e96e3cf80c56f1d4149bfd2cf6d04b67db2fb8dfafa4b23bd": {
+        "filename": "02 - Relazionale.pdf",
+        "uploaded_at": "2026-10-15 19:58:30"
+      },
+      "62e8db7d497f03d07a45048cca6fa086ec737583971e043de6545a035e4a770e": {
+        "filename": "03 - Algebra.pdf",
+        "uploaded_at": "2026-10-15 19:58:34"
       },
       "3c019f5451de66d66797fe48618b08e93c0c7de4faff770a24146d95c3b03333": {
-        "filename": "(NEW) 04.1 - SQL.DDL DMLbase.pdf",
-        "uploaded_at": "2026-10-13 10:12:13"
+        "filename": "04.1 - SQL.DDL DMLbase.pdf",
+        "uploaded_at": "2026-10-15 19:58:39"
+      },
+      "4b1d09148d0a63ccc375947d84ae9f4d2108a086efd9981012604dc8ebc58896": {
+        "filename": "04.2 - SQL Algebra.ValoriNulli.pdf",
+        "uploaded_at": "2026-10-15 19:58:45"
+      },
+      "d45b317d74dab6005b21d5a8e413bf6e3671e9d15ffed4203cd1ffd55c388cb6": {
+        "filename": "Esami precedenti.pdf",
+        "uploaded_at": "2026-10-15 19:58:50"
+      },
+      "536557b8a333de7cb2ffa8d5479debc9ecc0f29d93c5add1899bb0b6c1be8e95": {
+        "filename": "Esercizi.pdf",
+        "uploaded_at": "2026-10-15 19:58:56"
+      },
+      "bfd739c22c724cbcbc71a5deb52773f07799d2c1694408aa99212c87fbc12d31": {
+        "filename": "L00-IntroduzioneDB2.pdf",
+        "uploaded_at": "2026-10-15 19:59:01"
+      },
+      "72a97d9409cc949d93e43059da23d07877a0048e1e2da38675eb5ed49e855d58": {
+        "filename": "L01.1-DB2inLAB.pdf",
+        "uploaded_at": "2026-10-15 19:59:05"
+      },
+      "adad55750226fec8dc29852a88aea5e1ea5b95a26b3cd32880bf4deb355628c8": {
+        "filename": "L01.2-DDL_DMLbase.pdf",
+        "uploaded_at": "2026-10-15 19:59:10"
       }
     },
     "Architetture dei Calcolatori": {
@@ -160,6 +194,22 @@
       "dd5fc6cedbe38c9ef931d50b1e991081831e59b11a76db640b4d52a0acf62e47": {
         "filename": "03_Linguaggio_macchina.pdf",
         "uploaded_at": "2026-10-13 10:12:07"
+      },
+      "fc19aa0777ee946c2adbaf3af15f9f6941f682325b1e2368303b6d01ff902a87": {
+        "filename": "Prove d'esame.pdf",
+        "uploaded_at": "2026-10-15 11:39:08"
+      },
+      "cf62120b16ffc570dc485b9a72b7adeab9ee84d6d30b33b3d97cad5e870e868f": {
+        "filename": "Soluzione_2015_01_08.pdf",
+        "uploaded_at": "2026-10-15 11:39:12"
+      },
+      "3beea2fb23316d563be3d7455b9499ab74dcfd718ee4641423ed0cfc8169506d": {
+        "filename": "04 - Interruzioni.pdf",
+        "uploaded_at": "2026-10-16 11:03:04"
+      },
+      "5f798e1d2d8ca598ff2f26689b0e0060f2bbba9e71b3e5a92a6cc2c95812eaf1": {
+        "filename": "Testo_Esercitazione_mapping_DLX.pdf",
+        "uploaded_at": "2026-10-16 11:03:09"
       }
     },
     "Fisica Generale": {
@@ -174,22 +224,6 @@
       "e8ebe26925afde19c5fed5e12081af0f2458a1974b78a4f6aeef3c2e6b512adf": {
         "filename": "01-introduzione.pdf",
         "uploaded_at": "2026-10-02 21:20:47"
-      },
-      "3f78e8bc3784b323bda93c2f4cbd4984d9841939ed9eae2e3729a402b4aeddd9": {
-        "filename": "02-vettori.pdf",
-        "uploaded_at": "2026-10-02 21:20:54"
-      },
-      "f0f9fe6340bc3d90016df411f6d74ac37f668d8d0e2dae64723e2f64392594dd": {
-        "filename": "03-cinematica.pdf",
-        "uploaded_at": "2026-10-02 21:20:59"
-      },
-      "7da29f77cfaacef765a41850f64ea747ecf65ad7b00afb7821e92b6909641e3c": {
-        "filename": "04-statica.pdf",
-        "uploaded_at": "2026-10-02 21:21:05"
-      },
-      "8fd7a291dccf4c3ea1e63e33c6fa76d2a8cca775ce8f50d950750e6124602d52": {
-        "filename": "05-dinamica.pdf",
-        "uploaded_at": "2026-10-02 21:21:11"
       },
       "2dfccde39d52505b13bd5c9430f3af4dae63ecec607cc3d154f7c5853c080f8f": {
         "filename": "Prove d'esame.pdf",
@@ -242,6 +276,50 @@
       "b800508f0d3180d4d58b58236f76d048d4ddf7b1815d7b419d3c37e5792d8f95": {
         "filename": "10 - Sistemi non inerziali e forze fittizie.md",
         "uploaded_at": "2026-10-13 10:12:33"
+      },
+      "a36c80e298dc11f55347317b3ecc5ea4ae85c2a9d47833012f9d5fd71c8c9366": {
+        "filename": "11 - Studio del lavoro e della forza elastica.md",
+        "uploaded_at": "2026-10-15 11:13:07"
+      },
+      "e9a44219961aa90aff08b7fd5ab460118e661ffe051444f36d78bb99db3dd788": {
+        "filename": "Prove d'esame.pdf",
+        "uploaded_at": "2026-10-15 11:43:58"
+      },
+      "3f78e8bc3784b323bda93c2f4cbd4984d9841939ed9eae2e3729a402b4aeddd9": {
+        "filename": "S02 - Vettori.pdf",
+        "uploaded_at": "2026-10-15 11:48:42"
+      },
+      "f0f9fe6340bc3d90016df411f6d74ac37f668d8d0e2dae64723e2f64392594dd": {
+        "filename": "S03 - Cinematica.pdf",
+        "uploaded_at": "2026-10-15 11:48:49"
+      },
+      "7da29f77cfaacef765a41850f64ea747ecf65ad7b00afb7821e92b6909641e3c": {
+        "filename": "S04 - Statica.pdf",
+        "uploaded_at": "2026-10-15 11:48:55"
+      },
+      "8fd7a291dccf4c3ea1e63e33c6fa76d2a8cca775ce8f50d950750e6124602d52": {
+        "filename": "S05 - Dinamica.pdf",
+        "uploaded_at": "2026-10-15 11:49:04"
+      },
+      "a1532de16d917a2044ca9726d89024e11b79851adf157449d034a0fe33d4afab": {
+        "filename": "12 - Campi conservativi e operatore rotore.md",
+        "uploaded_at": "2026-10-16 11:03:15"
+      },
+      "15197bdb1d52c27a5a70596eb5787d619be4f7c852c6ec939fc5bc8bf842a286": {
+        "filename": "S06 - Lavoro-e-energia.pdf",
+        "uploaded_at": "2026-10-16 11:03:21"
+      },
+      "2a9b7dccabb932db324ed16341d502533bea2e41fa2bed1bc718fc18743d0ffb": {
+        "filename": "S07 - Terzo-principio.pdf",
+        "uploaded_at": "2026-10-16 11:03:26"
+      },
+      "0820ce2b3b10862abeb259a5767855ea08ad12f7ed5df879519e83c0cf475f10": {
+        "filename": "S08 - Dinamica-sistemi.pdf",
+        "uploaded_at": "2026-10-16 11:03:33"
+      },
+      "4ffe4f3fcf8059fcc959a9ca9850548796558ba968f39e463ea5ec35f5861888": {
+        "filename": "S09 - Gravitazione.pdf",
+        "uploaded_at": "2026-10-16 11:03:40"
       }
     },
     "Matematica Applicata": {
@@ -308,6 +386,14 @@
       "17e94700ecf48dd9009b5aca860cc61bf2c630133afb604cfaf363bab299dfec": {
         "filename": "06 - Esercizi di calcolo delle probabilita.md",
         "uploaded_at": "2026-10-13 10:12:27"
+      },
+      "887117fdd0277b5d7d565aee71665b4ed5f48afde61eeb21c9ee72050209f99a": {
+        "filename": "07 - Momenti e Varianza di una Variabile Casuale.md",
+        "uploaded_at": "2026-10-15 11:13:00"
+      },
+      "a27f63fe766d545b68fa75bf698fd17cd283d72f0906f8cb0ccf66b1d7a73a76": {
+        "filename": "07 - Momenti e Varianza di una Variabile Casuale.md",
+        "uploaded_at": "2026-10-15 11:43:41"
       }
     }
   }

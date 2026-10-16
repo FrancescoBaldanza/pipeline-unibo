@@ -32,6 +32,7 @@ def phase_base_sync() -> BaseSyncManager:
 
 
 from config.settings import SOURCE_ROOT, TARGET_ROOT
+from config.course_rules import strip_new_prefix
 
 
 def phase_convert(tracker: PipelineTracker):
@@ -44,12 +45,12 @@ def phase_convert(tracker: PipelineTracker):
         (
             "Matematica Applicata",
             SOURCE_ROOT / "Matematica Applicata T" / "Schermate di lavagne",
-            TARGET_ROOT / "Matematica Applicata" / "Lezioni"
+            TARGET_ROOT / "Matematica Applicata"
         ),
         (
             "Fisica Generale",
             SOURCE_ROOT / "Fisica Generale T" / "Lezioni modulo 1",
-            TARGET_ROOT / "Fisica Generale" / "Lezioni"
+            TARGET_ROOT / "Fisica Generale"
         )
     ]
 
@@ -64,7 +65,8 @@ def phase_convert(tracker: PipelineTracker):
 
         existing_indices = []
         for md_file in dest_dir.glob("*.md"):
-            m = re.match(r"^(\d{1,2})\s*[-_–—.]", md_file.name)
+            clean_name = strip_new_prefix(md_file.name)
+            m = re.match(r"^(\d{1,2})\s*[-_–—.]", clean_name)
             if m:
                 existing_indices.append(int(m.group(1)))
         max_index = max(existing_indices, default=0)

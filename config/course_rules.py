@@ -71,6 +71,12 @@ COURSE_RULES: Dict[str, CourseRule] = {
                 convert_to_markdown=False
             ),
             SubfolderRule(
+                source_name_pattern=r"^Modulo\s*2.*",
+                target_name="Laboratorio",
+                is_lesson_folder=False,
+                convert_to_markdown=False
+            ),
+            SubfolderRule(
                 source_name_pattern=r"^Introduzione\s*al\s*corso.*",
                 target_name="Introduzione",
                 is_lesson_folder=False
@@ -125,13 +131,53 @@ COURSE_RULES: Dict[str, CourseRule] = {
 }
 
 
+def strip_new_prefix(filename: str) -> str:
+    """Rimuove il prefisso (NEW), (New) o (new) dal nome del file se presente."""
+    return re.sub(r"^\s*\((?:NEW|New|new)\)\s*", "", filename).strip()
+
+
+def add_new_prefix(filename: str) -> str:
+    """Aggiunge il prefisso '(NEW) ' al nome del file se non già presente."""
+    clean = strip_new_prefix(filename)
+    return f"(NEW) {clean}"
+
+
+def format_architetture_filename(filename: str) -> str:
+    """
+    Formatta i file di Architetture:
+    sostituisce il primo '_' tra numero e titolo con ' - ', e tutti i successivi '_' con spazi.
+    Esempio: '03_Linguaggio_macchina.pdf' -> '03 - Linguaggio macchina.pdf'
+    """
+    ext = Path(filename).suffix
+    stem = Path(filename).stem
+    has_new = bool(re.match(r"^\s*\((?:NEW|New|new)\)\s*", stem))
+    clean_stem = strip_new_prefix(stem)
+
+    match = re.match(r"^(\d+(?:\.\d+)?)\s*_(.*)$", clean_stem)
+    if match:
+        num_part = match.group(1)
+        rest_part = match.group(2)
+        title_clean = rest_part.replace("_", " ").strip()
+        title_clean = re.sub(r"\s+", " ", title_clean)
+        if num_part.isdigit() and len(num_part) == 1:
+            num_part = f"0{num_part}"
+        formatted = f"{num_part} - {title_clean}{ext}"
+    else:
+        formatted = f"{clean_stem}{ext}"
+
+    if has_new:
+        return f"(NEW) {formatted}"
+    return formatted
+
+
 def format_slide_filename(original_name: str) -> str:
     stem = Path(original_name).stem
     ext = Path(original_name).suffix
+    clean_stem = strip_new_prefix(stem)
+    clean_stem = re.sub(r"^[sS]\s*", "", clean_stem).strip()
+    clean_stem = re.sub(r"^\((\d+)\)", r"\1", clean_stem).strip()
 
-    stem = re.sub(r"^\s*\((?:NEW|New|new)\)\s*", "", stem).strip()
-
-    match = re.match(r"^(\d+(?:\.\d+)?)\s*[-_–—.]?\s*(.*)$", stem)
+    match = re.match(r"^(\d+(?:\.\d+)?)\s*[-_–—.]?\s*(.*)$", clean_stem)
     if match:
         num_part = match.group(1)
         title_part = match.group(2).strip().replace("_", " ")
@@ -139,9 +185,9 @@ def format_slide_filename(original_name: str) -> str:
             num_part = f"0{num_part}"
         if title_part:
             clean_title = title_part.capitalize()
-            return f"({num_part}) - {clean_title}{ext}"
+            return f"S{num_part} - {clean_title}{ext}"
         else:
-            return f"({num_part}){ext}"
+            return f"S{num_part}{ext}"
 
     return f"{stem.capitalize()}{ext}"
 
@@ -149,8 +195,7 @@ def format_slide_filename(original_name: str) -> str:
 def clean_lesson_filename(original_name: str, index_fallback: Optional[int] = None) -> str:
     stem = Path(original_name).stem
     ext = Path(original_name).suffix
-
-    stem = re.sub(r"^\s*\((?:NEW|New|new)\)\s*", "", stem).strip()
+    stem = strip_new_prefix(stem)
 
     stem = stem.replace("_", " ")
     stem = re.sub(r"\s+", " ", stem).strip()
@@ -162,9 +207,9 @@ def clean_lesson_filename(original_name: str, index_fallback: Optional[int] = No
         if num_part.isdigit() and len(num_part) == 1:
             num_part = f"0{num_part}"
         if title_part:
-            return f"(NEW) {num_part} - {title_part}{ext}"
+            return f"{num_part} - {title_part}{ext}"
         else:
-            return f"(NEW) {num_part}{ext}"
+            return f"{num_part}{ext}"
 
     match_lez = re.match(r"^Lezione\s+(\d+)\s*(.*)$", stem, re.IGNORECASE)
     if match_lez:
@@ -172,11 +217,11 @@ def clean_lesson_filename(original_name: str, index_fallback: Optional[int] = No
         title_part = match_lez.group(2).strip()
         num_str = f"{num_part:02d}"
         if title_part:
-            return f"(NEW) {num_str} - Lezione {num_part} {title_part}{ext}".replace("  ", " ")
+            return f"{num_str} - Lezione {num_part} {title_part}{ext}".replace("  ", " ")
         else:
-            return f"(NEW) {num_str} - Lezione {num_part}{ext}"
+            return f"{num_str} - Lezione {num_part}{ext}"
 
     if index_fallback is not None:
-        return f"(NEW) {index_fallback:02d} - {stem}{ext}"
+        return f"{index_fallback:02d} - {stem}{ext}"
 
-    return f"(NEW) {stem}{ext}"
+    return f"{stem}{ext}"

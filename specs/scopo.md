@@ -13,4 +13,5 @@ allora li traduco in markdown.
 Questa pipeline vuole automatizzare questo intero processo: `Download`, `Select`, `Convert` in markdown e `Upload` a NotebookLM
 
 #### Get
-La pagina di virtuale è strutturata per sezioni, come puoi vedere nella [pagina di matematica applicata](paina-matematica-applicata.html)
+La pagina di virtuale è strutturata per sezioni, come puoi vedere nella [pagina di matematica applicata](paina-matematica-applicata.html),
+ogni sezione deve rappresentare una cartella 

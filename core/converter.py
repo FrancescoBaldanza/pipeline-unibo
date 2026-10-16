@@ -10,7 +10,7 @@ import pypdfium2 as pdfium
 from google import genai
 from google.genai import types
 
-from config.settings import GEMINI_API_KEY
+from config.settings import GEMINI_API_KEY, NOTEBOOKLM_SOURCES_ROOT
 from core.tracker import PipelineTracker, calculate_sha256
 
 
@@ -204,15 +204,25 @@ class PDFToMarkdownConverter:
             forced_prefix=forced_prefix
         )
         
-        out_md_path = output_dir / f"{semantic_title}.md"
+        clean_title = re.sub(r"^\s*\((?:NEW|New|new)\)\s*", "", semantic_title).strip()
+        out_md_path = output_dir / f"(NEW) {clean_title}.md"
+        content_text = "\n\n---\n\n".join(markdown_parts) + "\n"
         with open(out_md_path, "w", encoding="utf-8") as f:
-            f.write("\n\n---\n\n".join(markdown_parts) + "\n")
+            f.write(content_text)
+
+        # Copia pulita per Fonti NotebookLM
+        course_name = output_dir.name
+        nblm_course_dir = NOTEBOOKLM_SOURCES_ROOT / course_name
+        nblm_course_dir.mkdir(parents=True, exist_ok=True)
+        nblm_md_path = nblm_course_dir / f"{clean_title}.md"
+        with open(nblm_md_path, "w", encoding="utf-8") as f:
+            f.write(content_text)
 
         self.tracker.record_conversion(
             sha256_hash=sha256,
             source_pdf=str(pdf_path),
             md_output=str(out_md_path),
-            semantic_title=semantic_title
+            semantic_title=clean_title
         )
 
         print(f"[OK] Completata conversione: {out_md_path.name}")
@@ -232,7 +242,8 @@ class PDFToMarkdownConverter:
             pdf_files.extend(list(s_dir.glob("*.pdf")))
 
         for md in md_files:
-            num_match = re.search(r"^(\d{2})", md.name)
+            clean_md_stem = re.sub(r"^\s*\((?:NEW|New|new)\)\s*", "", md.stem).strip()
+            num_match = re.search(r"^(\d{2})", clean_md_stem)
             prefix = num_match.group(1) if num_match else None
             for pdf in pdf_files:
                 pdf_sha = calculate_sha256(pdf)
@@ -244,7 +255,7 @@ class PDFToMarkdownConverter:
                     pdf_num_match = re.search(r"^(\d{1,2})", pdf.name)
                     if prefix and pdf_num_match and f"{int(pdf_num_match.group(1)):02d}" == prefix:
                         matched = True
-                if not matched and (pdf.stem.lower() in md.stem.lower() or md.stem.lower() in pdf.stem.lower()):
+                if not matched and (pdf.stem.lower() in clean_md_stem.lower() or clean_md_stem.lower() in pdf.stem.lower()):
                     matched = True
                 
                 if matched:
