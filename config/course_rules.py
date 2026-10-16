@@ -9,6 +9,7 @@ class SubfolderRule:
     source_name_pattern: str
     target_name: str
     is_lesson_folder: bool = False
+    is_exercise_folder: bool = False
     convert_to_markdown: bool = False
     is_slide_folder: bool = False
 
@@ -28,7 +29,8 @@ class CourseRule:
             return SubfolderRule(
                 source_name_pattern=".*",
                 target_name=folder_name,
-                is_lesson_folder=False,
+                is_lesson_folder=True,
+                is_exercise_folder=False,
                 convert_to_markdown=False,
                 is_slide_folder=False
             )
@@ -42,20 +44,35 @@ COURSE_RULES: Dict[str, CourseRule] = {
         allow_all_subfolders=True,
         subfolder_rules=[
             SubfolderRule(
-                source_name_pattern=r"^Introduzione$",
-                target_name="Introduzione e esami",
-                is_lesson_folder=False
+                source_name_pattern=r"^Introduzione.*",
+                target_name="Introduzione",
+                is_lesson_folder=True,
+                is_exercise_folder=False,
             ),
             SubfolderRule(
                 source_name_pattern=r"^Complementi.*",
                 target_name="Ripasso",
-                is_lesson_folder=False
+                is_lesson_folder=True,
+                is_exercise_folder=False,
             ),
             SubfolderRule(
                 source_name_pattern=r"^Mapping.*",
                 target_name="Mapping e decodifica",
                 is_lesson_folder=True,
+                is_exercise_folder=False,
                 convert_to_markdown=False
+            ),
+            SubfolderRule(
+                source_name_pattern=r"^Linguaggio.*",
+                target_name="Linguaggio macchina",
+                is_lesson_folder=True,
+                is_exercise_folder=False,
+            ),
+            SubfolderRule(
+                source_name_pattern=r"^Interruzioni.*",
+                target_name="Interruzioni",
+                is_lesson_folder=True,
+                is_exercise_folder=False,
             ),
         ]
     ),
@@ -68,18 +85,28 @@ COURSE_RULES: Dict[str, CourseRule] = {
                 source_name_pattern=r"^Modulo\s*1.*",
                 target_name="Lezioni",
                 is_lesson_folder=True,
+                is_exercise_folder=False,
                 convert_to_markdown=False
             ),
             SubfolderRule(
                 source_name_pattern=r"^Modulo\s*2.*",
                 target_name="Laboratorio",
                 is_lesson_folder=False,
+                is_exercise_folder=True,
+                convert_to_markdown=False
+            ),
+            SubfolderRule(
+                source_name_pattern=r"^Esercizi.*",
+                target_name="Esercizi",
+                is_lesson_folder=False,
+                is_exercise_folder=True,
                 convert_to_markdown=False
             ),
             SubfolderRule(
                 source_name_pattern=r"^Introduzione\s*al\s*corso.*",
                 target_name="Introduzione",
-                is_lesson_folder=False
+                is_lesson_folder=False,
+                is_exercise_folder=False
             ),
         ]
     ),
@@ -89,22 +116,25 @@ COURSE_RULES: Dict[str, CourseRule] = {
         allow_all_subfolders=False,
         subfolder_rules=[
             SubfolderRule(
+                source_name_pattern=r"^Schermate\s*di\s*lavagne.*",
+                target_name="Lezioni",
+                is_lesson_folder=True,
+                is_exercise_folder=False,
+                convert_to_markdown=True
+            ),
+            SubfolderRule(
                 source_name_pattern=r"^Appunti.*",
                 target_name="Appunti",
-                is_lesson_folder=False,
+                is_lesson_folder=True,
+                is_exercise_folder=False,
                 convert_to_markdown=False
             ),
             SubfolderRule(
                 source_name_pattern=r"^Fogli\s*di\s*esercizi.*",
                 target_name="Esercizi",
                 is_lesson_folder=False,
+                is_exercise_folder=True,
                 convert_to_markdown=False
-            ),
-            SubfolderRule(
-                source_name_pattern=r"^Schermate\s*di\s*lavagne.*",
-                target_name="Lezioni",
-                is_lesson_folder=True,
-                convert_to_markdown=True
             ),
         ]
     ),
@@ -117,14 +147,30 @@ COURSE_RULES: Dict[str, CourseRule] = {
                 source_name_pattern=r"^Lezioni\s*modulo\s*1.*",
                 target_name="Lezioni",
                 is_lesson_folder=True,
+                is_exercise_folder=False,
                 convert_to_markdown=True
             ),
             SubfolderRule(
                 source_name_pattern=r"^Slides?\s*Lezioni.*",
                 target_name="Slide Lezioni",
-                is_lesson_folder=False,
+                is_lesson_folder=True,
+                is_exercise_folder=False,
                 convert_to_markdown=False,
                 is_slide_folder=True
+            ),
+            SubfolderRule(
+                source_name_pattern=r"^Esercizi\s*tutor.*",
+                target_name="Esercizi tutor",
+                is_lesson_folder=False,
+                is_exercise_folder=True,
+                convert_to_markdown=False
+            ),
+            SubfolderRule(
+                source_name_pattern=r"^Archivio\s*prove\s*d'esame.*",
+                target_name="Prove d'esame",
+                is_lesson_folder=False,
+                is_exercise_folder=True,
+                convert_to_markdown=False
             ),
         ]
     ),

@@ -7,7 +7,8 @@ from typing import List, Dict, Tuple, Optional
 from config.settings import (
     SOURCE_ROOT,
     TARGET_ROOT,
-    NOTEBOOKLM_SOURCES_ROOT,
+    AI_LEZIONI_SUBDIR,
+    AI_ESERCIZI_SUBDIR,
     ALLOWED_EXTENSIONS,
     IGNORED_TARGET_COURSES
 )
@@ -33,17 +34,14 @@ class BaseSyncManager:
     def __init__(
         self,
         source_root: Path = SOURCE_ROOT,
-        target_root: Path = TARGET_ROOT,
-        notebooklm_root: Path = NOTEBOOKLM_SOURCES_ROOT
+        target_root: Path = TARGET_ROOT
     ):
         self.source_root = Path(source_root).expanduser().resolve()
         self.target_root = Path(target_root).expanduser().resolve()
-        self.notebooklm_root = Path(notebooklm_root).expanduser().resolve()
 
     def migrate_legacy_folders(self):
         print("Verifica ed eventuale migrazione note legacy e appiattimento UniBo...")
         self.target_root.mkdir(parents=True, exist_ok=True)
-        self.notebooklm_root.mkdir(parents=True, exist_ok=True)
 
         # 1. Rimuove cartelle Context obsolete
         for rule in COURSE_RULES.values():
@@ -160,17 +158,7 @@ class BaseSyncManager:
                     shutil.rmtree(p, ignore_errors=True)
                     print(f"   [OK] Appiattita cartella 'Architetture dei Calcolatori/{sub}' nella radice del corso.")
 
-        # 6. Sincronizzazione iniziale file Markdown verso Fonti NotebookLM
-        for cname in ["Matematica Applicata", "Fisica Generale"]:
-            c_dir = self.target_root / cname
-            nblm_c_dir = self.notebooklm_root / cname
-            if c_dir.exists():
-                nblm_c_dir.mkdir(parents=True, exist_ok=True)
-                for md_file in c_dir.glob("*.md"):
-                    clean_md_name = strip_new_prefix(md_file.name)
-                    dest_nblm = nblm_c_dir / clean_md_name
-                    if not dest_nblm.exists() or md_file.stat().st_size != dest_nblm.stat().st_size:
-                        shutil.copy2(md_file, dest_nblm)
+
 
     def _merge_exam_folder_if_needed(self, source_dir: Path, target_dir: Path) -> bool:
         is_exam_archive = (
@@ -226,7 +214,6 @@ class BaseSyncManager:
     def sync_all_courses(self) -> Dict[str, List[Tuple[Path, Path]]]:
         self.migrate_legacy_folders()
         self.target_root.mkdir(parents=True, exist_ok=True)
-        self.notebooklm_root.mkdir(parents=True, exist_ok=True)
 
         copied_summary = {}
 
@@ -239,8 +226,11 @@ class BaseSyncManager:
             target_course_dir = self.target_root / rule.target_name
             target_course_dir.mkdir(parents=True, exist_ok=True)
 
-            notebooklm_course_dir = self.notebooklm_root / rule.target_name
-            notebooklm_course_dir.mkdir(parents=True, exist_ok=True)
+            ai_lezioni_dir = target_course_dir / ".ai" / "lezioni"
+            ai_lezioni_dir.mkdir(parents=True, exist_ok=True)
+
+            ai_esercizi_dir = target_course_dir / ".ai" / "esercizi"
+            ai_esercizi_dir.mkdir(parents=True, exist_ok=True)
 
             copied_summary[rule.target_name] = []
             print(f"\n[SYNC] Corso: {source_course_name} -> {rule.target_name}")
@@ -254,7 +244,7 @@ class BaseSyncManager:
                     continue
 
                 # Verifica unione esami
-                is_exam = self._merge_exam_folder_if_needed(source_subfolder, notebooklm_course_dir)
+                is_exam = self._merge_exam_folder_if_needed(source_subfolder, ai_esercizi_dir)
                 if rule.target_name == "Architetture dei Calcolatori":
                     self._merge_exam_folder_if_needed(source_subfolder, target_course_dir)
 
@@ -264,7 +254,6 @@ class BaseSyncManager:
 
                 files_to_process = []
                 for root_path, _, files in os.walk(source_subfolder):
-                    # Salta le cartelle di singoli compiti d'esame già uniti in 'Prove d'esame.pdf'
                     root_name_lower = Path(root_path).name.lower()
                     if "prove_esame" in root_name_lower or "archivio prove d'esame" in root_name_lower:
                         continue
@@ -277,12 +266,7 @@ class BaseSyncManager:
                             files_to_process.append(f_path)
 
                 for idx, src_file in enumerate(files_to_process, 1):
-                    # Se il PDF deve essere convertito in Markdown (es. lavagne MA, lezioni modulo 1 FG),
-                    # non copiamo il PDF raw (il markdown verrà generato da OCR)
-                    if sub_rule and sub_rule.convert_to_markdown and src_file.suffix.lower() == ".pdf":
-                        continue
-
-                    # 1. Determina il nome base pulito (per NotebookLM e base UniBo)
+                    # 1. Determina il nome base pulito
                     if rule.target_name == "Architetture dei Calcolatori":
                         clean_filename = strip_new_prefix(format_architetture_filename(src_file.name))
                     elif sub_rule and sub_rule.is_slide_folder:
@@ -292,33 +276,22 @@ class BaseSyncManager:
                     else:
                         clean_filename = strip_new_prefix(src_file.name)
 
-                    # 2. Copia verso NOTEBOOKLM_SOURCES_ROOT (tutte le fonti per l'AI, senza prefisso NEW)
-                    nblm_dest = notebooklm_course_dir / clean_filename
-                    should_copy_nblm = not nblm_dest.exists() or src_file.stat().st_size != nblm_dest.stat().st_size
-                    if should_copy_nblm:
-                        shutil.copy2(src_file, nblm_dest)
-                        print(f"   [FONTE NOTEBOOKLM] {clean_filename}")
-
-                    # 3. Determina se il file appartiene ad UniBo (solo lezioni / materiale studente)
-                    belongs_to_unibo = False
-                    if rule.target_name == "Architetture dei Calcolatori":
-                        belongs_to_unibo = True
-                    elif rule.target_name == "Basi di Dati":
-                        belongs_to_unibo = (sub_rule is not None and sub_rule.is_lesson_folder)
-                    elif rule.target_name == "Fisica Generale":
-                        belongs_to_unibo = (sub_rule is not None and sub_rule.is_slide_folder)
-                    elif rule.target_name == "Matematica Applicata":
-                        belongs_to_unibo = False
-
-                    if not belongs_to_unibo:
+                    # 2. Gestione ESERCIZI: vanno SOLO in .ai/esercizi/ (senza prefisso NEW)
+                    if sub_rule and sub_rule.is_exercise_folder:
+                        dest_es = ai_esercizi_dir / clean_filename
+                        if not dest_es.exists() or src_file.stat().st_size != dest_es.stat().st_size:
+                            shutil.copy2(src_file, dest_es)
+                            print(f"   [ESERCIZIO .AI] {clean_filename}")
                         continue
 
-                    # 4. Copia verso UniBo (radice del corso, con (NEW) se nuovo)
-                    already_in_unibo = unibo_file_exists(target_course_dir, clean_filename)
+                    # 3. Gestione LEZIONI:
+                    # Se il PDF deve essere convertito in Markdown per lo studente, saltiamo la copia del PDF grezzo
+                    if sub_rule and sub_rule.convert_to_markdown and src_file.suffix.lower() == ".pdf":
+                        continue
 
+                    # Copia per lo studente in radice UniBo (con (NEW) se nuovo)
+                    already_in_unibo = unibo_file_exists(target_course_dir, clean_filename)
                     if already_in_unibo:
-                        # Se esiste già (sia come "nome" sia come "(NEW) nome"), non sovrascrive il nome
-                        # Aggiorna il contenuto solo se la dimensione è cambiata
                         existing_target = target_course_dir / clean_filename
                         if not existing_target.exists():
                             existing_target = target_course_dir / f"(NEW) {clean_filename}"
@@ -327,7 +300,6 @@ class BaseSyncManager:
                             print(f"   [AGGIORNATO UNIBO] {existing_target.name}")
                         copied_summary[rule.target_name].append((src_file, existing_target))
                     else:
-                        # File completamente nuovo in UniBo: prefisso (NEW)
                         unibo_dest = target_course_dir / f"(NEW) {clean_filename}"
                         shutil.copy2(src_file, unibo_dest)
                         print(f"   [NUOVO UNIBO] {unibo_dest.name}")

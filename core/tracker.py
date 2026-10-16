@@ -85,13 +85,14 @@ class PipelineTracker:
         }
         self.save()
 
-    def is_uploaded_to_notebooklm(self, course_name: str, sha256_hash: str) -> bool:
-        course_uploads = self.data.get("notebooklm_uploads", {}).get(course_name, {})
-        return sha256_hash in course_uploads
+    def is_ai_converted(self, sha256_hash: str) -> bool:
+        return sha256_hash in self.data.get("process_ai_conversions", {})
 
-    def record_notebooklm_upload(self, course_name: str, sha256_hash: str, filename: str):
-        self.data.setdefault("notebooklm_uploads", {}).setdefault(course_name, {})[sha256_hash] = {
-            "filename": filename,
-            "uploaded_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    def record_ai_conversion(self, sha256_hash: str, source_pdf: str, md_output: str, title: str):
+        self.data.setdefault("process_ai_conversions", {})[sha256_hash] = {
+            "source_pdf": str(source_pdf),
+            "md_output": str(md_output),
+            "title": title,
+            "converted_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         }
         self.save()

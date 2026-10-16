@@ -1,0 +1,73 @@
+name: Scrape Virtuale UniBo
+
+on:
+  schedule:
+    # Esegue ogni giorno alle 7:00 e alle 19:00 (orario italiano CEST: UTC 5:00 e 17:00)
+    - cron: '0 5,17 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Installa dipendenze UniBo-Downloader e Playwright
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          git clone https://github.com/FrancescoBaldanza/UniBo-Downloader.git /tmp/unibo-downloader
+          cd /tmp/unibo-downloader
+          pip install -r requirements.txt
+          pip install -e .
+          playwright install --with-deps chromium
+
+      - name: Configura e avvia download da Virtuale
+        env:
+          UNIBO_EMAIL: ${{ secrets.UNIBO_EMAIL }}
+          UNIBO_PASSWORD: ${{ secrets.UNIBO_PASSWORD }}
+        run: |
+          mkdir -p materiale
+          cd /tmp/unibo-downloader
+          
+          # Inizializza credenziali
+          dlub -init "$UNIBO_EMAIL" "$UNIBO_PASSWORD"
+          
+          # Imposta destinazione su cartella materiale del repo
+          dlub -dir "$GITHUB_WORKSPACE/materiale"
+          
+          # Definisce i corsi attivi
+          dlub -def "Matematica Applicata T" "80900"
+          dlub -def "Basi di Dati T" "80238"
+          dlub -def "Fisica Generale T" "83152"
+          dlub -def "Architetture dei Calcolatori T" "81475"
+          
+          # Esegue il download completo
+          dlub -get all
+
+      - name: Commit e Push nuovi file scaricati
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add materiale/
+          if git diff --staged --quiet; then
+            echo "Nessun nuovo materiale trovato su Virtuale."
+          else
+            echo "Nuovo materiale scaricato. Esecuzione commit e push..."
+            git commit -m "chore(virtuale): aggiornamento automatico materiali da Virtuale [skip ci]"
+            git push origin main
+          fi

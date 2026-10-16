@@ -1,7 +1,6 @@
 from .tracker import PipelineTracker, calculate_sha256
 from .base_sync import BaseSyncManager
-from .converter import PDFToMarkdownConverter
-from .notebooklm_sync import NotebookLMSyncManager
+from .converter import PDFToMarkdownConverter, ProcessConverter
 from .downloader import run_dlub_download
 
 __all__ = [
@@ -9,6 +8,6 @@ __all__ = [
     "calculate_sha256",
     "BaseSyncManager",
     "PDFToMarkdownConverter",
-    "NotebookLMSyncManager",
+    "ProcessConverter",
     "run_dlub_download"
 ]
